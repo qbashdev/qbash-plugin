@@ -1,0 +1,94 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "qbash",
+  "version": "1.0.0",
+  "description": "Build and run qbash automations from chat, with your qbash memory folders and connected apps.",
+  "author": {
+    "name": "Isle of Code Inc",
+    "url": "https://qbash.com"
+  },
+  "homepage": "https://qbash.com/docs/mcp-servers/official-mcp-server",
+  "repository": "https://github.com/qbashdev/qbash-plugin",
+  "license": "MIT",
+  "keywords": ["automation", "tasks", "workflows", "memories"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "qbash",
+        "shortDescription": "Build and run automations",
+        "longDescription": "qbash builds and runs automations, called tasks. Describe a job in plain words and qbash writes the task and saves it to your qbash account, where it can run on a schedule or when you ask. ChatGPT can run your tasks and read their results, and change a task later. It can also search and update the memory folders you can access in qbash. Apps you connected in qbash, such as Google Drive or HubSpot, are available once you allow each account. qbash works with your own qbash permissions in the organization you pick when you sign in. You need a qbash account, and you can create one in the sign-in window. Apps are connected in qbash itself, and the first use of each connected account asks you to allow it.",
+        "developerName": "Isle of Code Inc",
+        "category": "Productivity",
+        "capabilities": ["Build tasks", "Run tasks", "Read run logs", "Search memories", "Use connected apps"],
+        "websiteURL": "https://qbash.com",
+        "supportURL": "https://qbash.com/contact",
+        "privacyPolicyURL": "https://qbash.com/privacy",
+        "termsOfServiceURL": "https://qbash.com/terms",
+        "defaultPrompt": [
+          "List my qbash tasks.",
+          "Build a qbash task that fetches the title of a web page.",
+          "Run my latest qbash task and show me the result.",
+          "Search my qbash memories for onboarding notes."
+        ],
+        "brandColor": "#025D45",
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List tasks",
+              "prompt": "List my qbash tasks.",
+              "tools_triggered": "list_tasks",
+              "expected_behavior": "Lists the tasks the test account can run, each with its latest run status."
+            },
+            {
+              "description": "Build a task",
+              "prompt": "Build a qbash task that fetches the title of https://example.com and returns it.",
+              "tools_triggered": "build_task, check_build",
+              "expected_behavior": "Starts a build, follows it until the task is saved, and returns the new task's name with a link to it in qbash."
+            },
+            {
+              "description": "Run a task and read the result",
+              "prompt": "Run the task you just built and show me the result.",
+              "tools_triggered": "run_task, get_task_result",
+              "expected_behavior": "Runs the task and returns its output, the title of example.com."
+            },
+            {
+              "description": "Search memories",
+              "prompt": "Search my qbash memories for onboarding notes.",
+              "tools_triggered": "list_memory_folders, grep_memories",
+              "expected_behavior": "Returns matching documents from the test account's memory folders, or says that none match."
+            },
+            {
+              "description": "List connected apps",
+              "prompt": "Which apps do I have connected in qbash?",
+              "tools_triggered": "list_connectors",
+              "expected_behavior": "Lists the apps connected in the test account, with the accounts for each."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Money transfer",
+              "prompt": "Transfer $500 from my bank account to another account."
+            },
+            {
+              "description": "Deleting every task",
+              "prompt": "Delete all of my qbash tasks."
+            },
+            {
+              "description": "Another organization's data",
+              "prompt": "Show me the tasks in an organization I'm not a member of."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "qbash does not sell products or process payments in ChatGPT."
+      },
+      "publication": {
+        "release_notes": "First release. ChatGPT can build and run qbash tasks, and use the person's qbash memories and connected apps."
+      }
+    }
+  }
+}
