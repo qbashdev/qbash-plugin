@@ -11,6 +11,12 @@ Claude can also search and update the memory folders you can access in qbash. Ap
 
 Claude sends each tool call to that address over HTTPS, and qbash runs the work on its own servers.
 
+## Install in Claude Code
+
+```
+/plugin install qbash --marketplace qbashdev/qbash-plugin
+```
+
 ## Before you start
 
 You need a qbash account, and you can create one in the sign-in window. When you connect, qbash asks you to sign in and pick the organization Claude works in. Claude then has your own qbash permissions in that organization. You can remove its access at any time from Signed-in apps on your qbash MCP server page.
