@@ -7,8 +7,11 @@
     "name": "Isle of Code Inc",
     "url": "https://qbash.com"
   },
-  "homepage": "https://qbash.com/docs/mcp-servers/official-mcp-server",
+  "homepage": "https://qbash.com",
+  "documentationUrl": "https://qbash.com/docs/mcp-servers/official-mcp-server",
+  "supportUrl": "https://qbash.com/contact",
   "privacyPolicyUrl": "https://qbash.com/privacy",
+  "termsOfServiceUrl": "https://qbash.com/terms",
   "repository": "https://github.com/qbashdev/qbash-plugin",
   "license": "MIT",
   "keywords": [
