@@ -7,7 +7,14 @@
     "url": "https://qbash.com"
   },
   "homepage": "https://qbash.com/docs/mcp-servers/official-mcp-server",
+  "privacyPolicyUrl": "https://qbash.com/privacy",
   "repository": "https://github.com/qbashdev/qbash-plugin",
   "license": "MIT",
-  "keywords": ["automation", "tasks", "workflows", "memories"]
+  "keywords": [
+    "automation",
+    "tasks",
+    "workflows",
+    "memories"
+  ],
+  "icon": "./.claude-plugin/icon.png"
 }
