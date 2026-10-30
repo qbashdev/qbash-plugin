@@ -1,5 +1,6 @@
 {
   "name": "qbash",
+  "displayName": "qbash",
   "version": "1.0.0",
   "description": "Build and run qbash automations from Claude, with your qbash memory folders and connected apps.",
   "author": {
